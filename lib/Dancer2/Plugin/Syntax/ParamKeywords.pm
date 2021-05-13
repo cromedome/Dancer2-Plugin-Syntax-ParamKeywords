@@ -86,40 +86,29 @@ to use! Why can't they be shorter? Well now, dear reader, they are!
 This module provides a little syntactic sugar to make getting query, route,
 and body parameters just a little bit quicker. Instead of writing these:
 
-    route_parameters->get( ... );
-    route_parameters
     query_parameters->get( ... );
     query_parameters->get_all( ... );
     query_parameters
     body_parameters->get( ... );
     body_parameters->get_all( ... );
     body_parameters
+    route_parameters->get( ... );
+    route_parameters
 
 You can write just these:
 
-    route_param( ... );
-    route_params
     query_param( ... );
     query_params( ... );
     query_params
     body_param( ... );
     body_params( ... );
     body_params
+    route_param( ... );
+    route_params
 
 That's about 25-50% less typing in many cases. You're welcome.
 
 =head1 KEYWORDS
-
-=head2 route_param
-
-This is the equivalent of C<route_parameters-E<gt>get>. You must pass a
-parameter name to get.
-
-=head2 route_params
-
-When called without a parameter name, this is the equivalent of calling
-C<route_parameters>. It will return a L<Hash::MultiValue> object containing
-all of the route parameters that were passed.
 
 =head2 query_param
 
@@ -148,6 +137,23 @@ all of the body parameters that were posted to your route.
 
 When called with a parameter name, this acts the same as calling 
 C<body_parameters-E<gt>get_all>.
+
+=head2 route_param
+
+This is the equivalent of C<route_parameters-E<gt>get>. You must pass a
+parameter name to get.
+
+=head2 route_params
+
+When called without a parameter name, this is the equivalent of calling
+C<route_parameters>. It will return a L<Hash::MultiValue> object containing
+all of the route parameters that were passed.
+
+Unlike C<query_params> and C<body_params>, you cannot assign multiple 
+values to a single named parameter through route parameters in Dancer2.
+As such, you cannot pass a parameter to C<route_params> as you can with
+the other two methods - the underlying C<get_all> functionality for
+route parameters does not exist.
 
 =head1 SEE ALSO
 
