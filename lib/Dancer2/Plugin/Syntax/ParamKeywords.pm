@@ -112,7 +112,7 @@ That's about 25-50% less typing in many cases. You're welcome.
 
 =head2 route_param
 
-This is the equivalent of C<<<route_parameters->get>>>. You must pass a
+This is the equivalent of C<route_parameters-E<gt>get>. You must pass a
 parameter name to get.
 
 =head2 route_params
@@ -121,12 +121,9 @@ When called without a parameter name, this is the equivalent of calling
 C<route_parameters>. It will return a L<Hash::MultiValue> object containing
 all of the route parameters that were passed.
 
-When called with a parameter name, this is the equivalent of calling 
-C<<<route_parameters->get_all>>>.
-
 =head2 query_param
 
-This is the same as calling C<<<query_parameters->get>>>. You must pass a
+This is the same as calling C<query_parameters-E<gt>get>. You must pass a
 parameter name to get the value of.
 
 =head2 query_params
@@ -136,11 +133,11 @@ C<query_parameters>. It will return a L<Hash::MultiValue> object containing
 all of the query parameters that were passed.
 
 When called with a parameter name, this is the same as calling 
-C<<<query_parameters->get_all>>>.
+C<query_parameters-E<gt>get_all>.
 
 =head2 body_param
 
-This is the equivalent of C<<<body_parameters->get>>>. You must pass a
+This is the equivalent of C<body_parameters-E<gt>get>. You must pass a
 parameter name to get the value of.
 
 =head2 body_params
@@ -150,7 +147,7 @@ C<body_parameters>. It will return a L<Hash::MultiValue> object containing
 all of the body parameters that were posted to your route.
 
 When called with a parameter name, this acts the same as calling 
-C<<<body_parameters->get_all>>>.
+C<body_parameters-E<gt>get_all>.
 
 =head1 SEE ALSO
 
